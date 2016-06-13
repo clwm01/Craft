@@ -86,6 +86,8 @@
 		18F7E46F1C97F454007E3459 /* DutyDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F7E46E1C97F454007E3459 /* DutyDisplayView.swift */; };
 		18F7E4711C97FCC2007E3459 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F7E4701C97FCC2007E3459 /* Resource.swift */; };
 		26FDEB84629869B329580E24 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF7E3FA5773E8C0E92800CE /* Pods.framework */; };
+		CD21DBE01D0EECE000683E0E /* ExtensionForChatField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD21DBDF1D0EECE000683E0E /* ExtensionForChatField.swift */; };
+		CD21DBE31D0EEE6B00683E0E /* RTFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD21DBE21D0EEE6B00683E0E /* RTFuncs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -194,6 +196,8 @@
 		18F7E4701C97FCC2007E3459 /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		35FFEC4388D0F109F79B4A61 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A816835E20B22F39AE004838 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		CD21DBDF1D0EECE000683E0E /* ExtensionForChatField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionForChatField.swift; sourceTree = "<group>"; };
+		CD21DBE21D0EEE6B00683E0E /* RTFuncs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTFuncs.swift; sourceTree = "<group>"; };
 		FFF7E3FA5773E8C0E92800CE /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -251,6 +255,7 @@
 				1837D2351CFAE2B700FFE3FD /* ExtensionForChatRoom.swift */,
 				1837D23F1CFAEB3300FFE3FD /* ExtensionForChatGesture.swift */,
 				1837D2411CFAF2C800FFE3FD /* navigationClickEvents.swift */,
+				CD21DBDF1D0EECE000683E0E /* ExtensionForChatField.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -505,6 +510,7 @@
 		18A824471BEDCEBB00084589 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				CD21DBE11D0EEE2C00683E0E /* RTKit */,
 				18A824491BEDCF0E00084589 /* UIAdapter.swift */,
 				184867831BF851AE00016A4E /* Common.swift */,
 			);
@@ -778,6 +784,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		CD21DBE11D0EEE2C00683E0E /* RTKit */ = {
+			isa = PBXGroup;
+			children = (
+				CD21DBE21D0EEE6B00683E0E /* RTFuncs.swift */,
+			);
+			name = RTKit;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -966,6 +980,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD21DBE01D0EECE000683E0E /* ExtensionForChatField.swift in Sources */,
 				1817585D1C4B8D45008913DB /* CustomLayout.swift in Sources */,
 				1837D2421CFAF2C800FFE3FD /* navigationClickEvents.swift in Sources */,
 				181518411C958C4000AA4F33 /* MyAcitivitiesView.swift in Sources */,
@@ -1012,6 +1027,7 @@
 				18610C4E1C12D48600B864F2 /* RestService.swift in Sources */,
 				18F7E4671C97B2EF007E3459 /* ReviewTableSource.swift in Sources */,
 				1837D2401CFAEB3300FFE3FD /* ExtensionForChatGesture.swift in Sources */,
+				CD21DBE31D0EEE6B00683E0E /* RTFuncs.swift in Sources */,
 				184867821BF8506F00016A4E /* SliderMain.swift in Sources */,
 				1892E8D31CDE46D9002AAEBF /* Time.swift in Sources */,
 				18CE64341CF7354500834C2B /* DailyDetail.swift in Sources */,

@@ -36,6 +36,14 @@ class ChatRoom: ViewControllerBase {
     var chatListDoubleTap : UITapGestureRecognizer?
     
     
+    // RT Start
+    // UITextView for chat.
+    var textViewInitialHeight: CGFloat = 0
+    /// Message list for chat.
+    var chatContentsList: [String] = [String]()
+    // RT end
+    
+    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         soundPlay = PlaySound.sharedData()
@@ -179,6 +187,12 @@ class ChatRoom: ViewControllerBase {
         enterText!.font = UIFont.systemFontOfSize(15)
         enterText!.backgroundColor = UIColor.clearColor()
         enterText!.returnKeyType = UIReturnKeyType.Send
+        
+        // RT start
+        self.textViewInitialHeight = enterText!.frame.height
+        enterText?.delegate = self
+        // RT end
+        
         self.view!.addSubview(enterText!)
         
         self.enterText!.mas_makeConstraints{ make in
