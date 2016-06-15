@@ -9,6 +9,22 @@
 import Foundation
 
 extension ChatRoom: UITextViewDelegate {
+    
+    private func sendText() {
+        let message = RCTextMessage(content: self.enterText!.text)
+        RCIMClient.sharedRCIMClient().setReceiveMessageDelegate(self, object: nil)
+        RCIMClient.sharedRCIMClient().sendMessage(.ConversationType_PRIVATE, targetId: "2", content: message, pushContent: nil, success: {
+            messageId in
+                print("send successful")
+            }, error: {
+                (error, messageId) in
+                print("send fail")
+        })
+        self.enterText!.resignFirstResponder()
+        self.enterText!.text = ""
+    }
+    
+    
     func textViewDidChange(textView: UITextView) {
         // Caculate the size which best fits the specified size.
         // This height is just the height of textView which best fits its content.
@@ -31,10 +47,29 @@ extension ChatRoom: UITextViewDelegate {
         }
     }
     
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            self.sendText()
+            return false
+        } else {
+            return true
+        }
+    }
+    
     private func tableScrollToBottom() {
         if self.chatContentsList.count > 0 {
             self.chatListView?.scrollToRowAtIndexPath(NSIndexPath(forRow: self.chatContentsList.count - 1, inSection: 0), atScrollPosition: .Bottom, animated: true)
         }
     }
     
+}
+
+
+extension ChatRoom: RCIMClientReceiveMessageDelegate {
+    func onReceived(message: RCMessage!, left nLeft: Int32, object: AnyObject!) {
+        if message.content.isKindOfClass(RCTextMessage.classForCoder()) {
+            let content = message.content as! RCTextMessage
+            print(content.content)
+        }
+    }
 }
